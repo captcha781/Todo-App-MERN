@@ -8,6 +8,10 @@ const TodoSchema = new mongoose.Schema({
     value:{
         type:String,
         required: true
+    },
+    priority: {
+        type: Number,
+        required:true
     }
 })
 
