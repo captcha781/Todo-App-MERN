@@ -29,12 +29,7 @@ export const setTodo = (req: Request, res: Response) => {
 
 export const updateTodo = (req: Request, res: Response) => {
     let id = req.params.id;
-    let key = req.query.key;
-    let updateObj:any= {
-
-    }
-    updateObj[String(key)] = req.body.input
-    TodoModel.updateOne({ _id: id },updateObj)
+    TodoModel.updateOne({ _id: id },{value: req.body.value, priority: req.body.priority})
         .then((updateResponse) => {            
             res.json({ message: "Updated successfully", response: updateResponse })
         })
