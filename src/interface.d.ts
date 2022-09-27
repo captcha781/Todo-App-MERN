@@ -8,3 +8,8 @@ export interface TodoItem {
 export interface InitialState {
     todos: TodoItem[]
 }
+
+export interface CreateState {
+    value: string,
+    priority: number
+}
